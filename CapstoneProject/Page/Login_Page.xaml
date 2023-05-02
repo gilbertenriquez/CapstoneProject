@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CapstoneProject.Page.Login_Page"
+             
+             Title="Login_Page">
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout
+            x:Name="progressLoading"
+            IsVisible="False"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="Transparent">
+            <ActivityIndicator
+                x:Name="ai"
+                IsRunning="True" IsVisible="True"
+                HorizontalOptions="CenterAndExpand"
+                Color="{StaticResource ButtonColor}" Margin="0,0,0,0" />
+            <Label x:Name="lblorderstate" FontSize="20" FontFamily="facompa" Text="We're processing your request, please wait..." Margin="20" HorizontalOptions="CenterAndExpand" TextColor="WhiteSmoke"/>
+        </StackLayout>
+        
+        <StackLayout>
+            <Frame  
+                   BorderColor="#1C375C" 
+                   HasShadow="True" 
+                   CornerRadius="50" 
+                   HeightRequest="1000" 
+                VerticalOptions="FillAndExpand" >
+
+                <Grid BackgroundColor="Black" 
+                    HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand" 
+                      RowSpacing="10" Padding="20,30,20,0"
+                      RowDefinitions="AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO,AUTO">
+
+                    <Label Text="Email" TextColor="#2192FF"  FontSize="15" Grid.Row="3"/>
+                    <Entry Grid.Row="4" Placeholder="Email"
+                           Background="white"
+                           PlaceholderColor="Black"
+                           TextColor="Black"
+                       x:Name="txtemail"
+                       FontFamily="facompa"
+                           Margin="0,0,0,0" 
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"/>
+
+                    <Label Text="Password" TextColor="#2192FF" FontSize="15" Grid.Row="5"/>
+                    <Entry Grid.Row="6" 
+                           Background="white"
+                           Placeholder="Password"
+                           TextColor="Black"
+                           PlaceholderColor="Black"
+                           x:Name="txtpass"
+                       FontFamily="facompa"
+                           IsPassword="True" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="FillAndExpand"/>
+
+                    <Button Grid.Row="10"  
+                            TextColor="#2192FF" 
+                            Text="Sign In!"
+                            CornerRadius="20" 
+                            x:Name="lognBTN" 
+                            Clicked="lognBTN_Clicked"  />
+                    
+                    <Button Grid.Row="11" 
+                            BackgroundColor="Purple" 
+                            TextColor="#2192FF" 
+                            Text="Sign Up!" 
+                            CornerRadius="20"
+                            x:Name="SignUpBTN"
+                            Clicked="SignUpBTN_Clicked"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
